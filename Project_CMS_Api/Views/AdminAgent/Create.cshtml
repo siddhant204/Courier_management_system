@@ -1,0 +1,195 @@
+﻿@model Project_CMS_Api.Models.Agent
+
+@{
+    ViewData["Title"] = "Create";
+}
+<!doctype html>
+<html lang="en">
+
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&amp;family=Open+Sans:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://preview.colorlib.com/theme/foundation2/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="https://preview.colorlib.com/theme/foundation2/css/tiny-slider.css">
+    <link rel="stylesheet" href="https://preview.colorlib.com/theme/foundation2/css/aos.css">
+    <link rel="stylesheet" href="https://preview.colorlib.com/theme/foundation2/css/glightbox.min.css">
+    <link rel="stylesheet" href="https://preview.colorlib.com/theme/foundation2/css/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+    <title>Courier Management System</title>
+</head>
+<body>
+    <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                <a href="#" class="logo m-0 float-start">Courier Management System</a>
+                <ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-end">
+                    <li><a href="#">Home</a></li>
+                    <li class="has-children">
+                        <a href="#">LogOut</a>
+                    </li>
+                </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero">
+        <div class="map">
+            <img src="https://preview.colorlib.com/theme/foundation2/images/world-dotted-map.png" alt="Image" class="img-fluid">
+        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <h1 class="heading" data-aos="fade-up">Add new Delivery Executive <i class="fa fa-user-plus" aria-hidden="true"></i></h1>
+                    <hr>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="100" style="font-size: large;">Allows you to add a new Delivery Executive.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm col-md col-lg" data-aos="fade-up" data-aos-delay="0">
+                    <div class="feature box-shadow d-flex justify-content-center">
+
+                        <div class="text">
+                            <h3 class="text-center" data-aos="fade-up"><strong> Fill in the details to add a new Delivery Executive:- </strong></h3>
+                            <br>
+                            <form asp-action="AddAgent">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label asp-for="AgentName" class="control-label">Agent Name</label>
+                                    <input asp-for="AgentName" class="form-control" />
+                                    <span asp-validation-for="AgentName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="AgentContact" class="control-label">Contact</label>
+                                    <input asp-for="AgentContact" class="form-control" />
+                                    <span asp-validation-for="AgentContact" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="AgentEmail" class="control-label">Email</label>
+                                    <input asp-for="AgentEmail" class="form-control" />
+                                    <span asp-validation-for="AgentEmail" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="AgentPass" class="control-label">Password</label>
+                                    <input type="password" asp-for="AgentPass" class="form-control" />
+                                    <span asp-validation-for="AgentPass" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="AreaStartCode" class="control-label">Area Start Code</label>
+                                    <input asp-for="AreaStartCode" class="form-control" />
+                                    <span asp-validation-for="AreaStartCode" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="AreaEndCode" class="control-label">Area End Code</label>
+                                    <input asp-for="AreaEndCode" class="form-control" />
+                                    <span asp-validation-for="AreaEndCode" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Add" class="btn btn-primary" />
+                                    <a asp-action="AgentList" class="btn btn-outline-dark">Agent List</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="widget">
+
+                        <h3>Connect</h3>
+
+                        <!-- Grid container -->
+                        <div class="container">
+                            <!-- Section: Social media -->
+                            <section class="mb-4">
+
+                                <!-- Twitter -->
+                                <a class="btn btn-light btn-floating m-1" style="background-color: #55acee;" href="https://twitter.com/LOGIN" role="button">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+
+                                <!-- Google -->
+                                <a class="btn btn-light btn-floating m-1" style="background-color: #dd4b39;" href="https://accounts.google.com/signin/v2/identifier?flowName=GlifWebSignIn&flowEntry=ServiceLogin" role="button">
+                                    <i class="fab fa-google"></i>
+                                </a>
+
+
+                                <!-- Linkedin -->
+                                <a class="btn btn-light btn-floating m-1" style="background-color: #0082ca;" href="https://www.linkedin.com/login" role="button">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+
+                            </section>
+                            <!-- Section: Social media -->
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div id="overlayer"></div>
+    <div class="loader">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <script src="https://preview.colorlib.com/theme/foundation2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://preview.colorlib.com/theme/foundation2/js/tiny-slider.js"></script>
+    <script src="https://preview.colorlib.com/theme/foundation2/js/aos.js"></script>
+    <script src="https://preview.colorlib.com/theme/foundation2/js/glightbox.min.js"></script>
+    <script src="https://preview.colorlib.com/theme/foundation2/js/navbar.js"></script>
+    <script src="https://preview.colorlib.com/theme/foundation2/js/counter.js"></script>
+    <script src="https://preview.colorlib.com/theme/foundation2/js/custom.js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-23581568-13');
+    </script>
+</body>
+
+
+</html>
